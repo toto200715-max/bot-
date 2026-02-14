@@ -51,11 +51,11 @@ client.on('messageCreate', async message => {
   
         
   
-          await message.delete();
+          await message.reply({
+  content: "⚠️ يرجى عدم إزعاج طاقم العمل."
+});
 
-                   await message.reply({
-                         content: "⚠️ يرجى عدم إزعاج طاقم العمل."
-      });
+await message.delete();
   
       }
   
@@ -73,5 +73,6 @@ process.on('uncaughtException', error => {
 
 
   client.login(process.env.TOKEN)
+
 
 
