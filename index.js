@@ -52,7 +52,7 @@ client.on('messageCreate', async message => {
         
   
           await message.reply({
-  content: "⚠️ يرجى عدم إزعاج طاقم العمل."
+  content: "⚠️تحذير يرجى عدم إزعاج طاقم العمل."
 });
 
 await message.delete();
@@ -73,6 +73,7 @@ process.on('uncaughtException', error => {
 
 
   client.login(process.env.TOKEN)
+
 
 
 
