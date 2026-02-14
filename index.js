@@ -77,4 +77,5 @@ process.on('uncaughtException', error => {
   console.error('Uncaught exception:', error);
 });
 
-  client.login(`MTQ3MjMxMDIzMjI5NzM3Nzg0Mw.GATmT9.5PmrjeQ1jbg32NYjRLQhnWaEoSw-JEchxqTGSc`)
+
+  client.login(`process.env.TOKEN`)
