@@ -24,7 +24,7 @@ const client = new Client({
 
 
 client.on('ready', () => {
-        client.user.setActivity(`تست بوت`, {type:"PLAYING"})
+        client.user.setActivity(`بوت عمك  `, {type:"PLAYING"})
         client.user.setStatus("online");
 });
 
@@ -49,19 +49,13 @@ client.on('messageCreate', async message => {
   
         let user = message.member;
   
-        await message.member.timeout(1800000, `Idk`).then(async c => {
+        
   
-          await message.reply({
-  
-            content: `** لقد تم منحك مهلة مؤقتة مدتها نص ساعة. يرجى الانتظار وعدم إزعاج طاقم العمل ف الخاص**
-  
-    -----------------------------------------------------------------------------------------------
-  
-    **You have been given a temporary deadline of half an hour. Please wait and do not disturb the private staff **`,
-  
-          });
-  
-        });
+          await message.delete();
+
+                   await message.reply({
+                         content: "⚠️ يرجى عدم إزعاج طاقم العمل."
+      });
   
       }
   
@@ -79,4 +73,5 @@ process.on('uncaughtException', error => {
 
 
   client.login(process.env.TOKEN)
+
 
