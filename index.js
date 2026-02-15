@@ -24,7 +24,7 @@ const client = new Client({
 
 
 client.on('ready', () => {
-        client.user.setActivity('المتجر الافضل   `, {type:"PLAYING"})
+        client.user.setActivity(`المتجر الافضل`, {type:"PLAYING"})
         client.user.setStatus("online");
 });
 
@@ -73,6 +73,7 @@ process.on('uncaughtException', error => {
 
 
   client.login(process.env.TOKEN)
+
 
 
 
