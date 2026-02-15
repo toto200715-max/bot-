@@ -47,27 +47,13 @@ client.on('messageCreate', async message => {
         message.author !== message.client.user
       ) {
   
-        let user = message.member;
-  
-        
-  
-          antimembers.forEach(async member => {
+      let user = message.member;
 
-    if (
-        !message.author.bot &&
-        message.content.includes(`<@${member}>`) &&
-        message.author !== message.client.user
-    ) {
+await message.member.timeout(60000, 'Idk');
 
-        let user = message.member;
-
-        await message.member.timeout(60000, 'Idk').then(async c => {
-
-            await message.reply({
-                content: `**تم إعطاؤك تايم آوت لمدة دقيقة. الرجاء عدم الإزعاج.**`,
-            });
-            
-        });
+await message.reply({
+    content: `**تم إعطاؤك تايم آوت لمدة دقيقة. الرجاء عدم الإزعاج.**`,
+});
 
 await message.delete();
   
@@ -87,6 +73,7 @@ process.on('uncaughtException', error => {
 
 
   client.login(process.env.TOKEN)
+
 
 
 
