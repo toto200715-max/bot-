@@ -24,7 +24,7 @@ const client = new Client({
 
 
 client.on('ready', () => {
-        client.user.setActivity(`بوت عمك  `, {type:"PLAYING"})
+        client.user.setActivity('المتجر الافضل   `, {type:"PLAYING"})
         client.user.setStatus("online");
 });
 
@@ -51,9 +51,23 @@ client.on('messageCreate', async message => {
   
         
   
-          await message.reply({
-  content: "⚠️تحذير يرجى عدم إزعاج طاقم العمل."
-});
+          antimembers.forEach(async member => {
+
+    if (
+        !message.author.bot &&
+        message.content.includes(`<@${member}>`) &&
+        message.author !== message.client.user
+    ) {
+
+        let user = message.member;
+
+        await message.member.timeout(60000, 'Idk').then(async c => {
+
+            await message.reply({
+                content: `**تم إعطاؤك تايم آوت لمدة دقيقة. الرجاء عدم الإزعاج.**`,
+            });
+            
+        });
 
 await message.delete();
   
@@ -73,6 +87,7 @@ process.on('uncaughtException', error => {
 
 
   client.login(process.env.TOKEN)
+
 
 
 
