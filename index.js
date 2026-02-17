@@ -36,7 +36,8 @@ client.on('messageCreate', async message => {
 
     let antimembers = ["1059760626295132210",
      "981610670757904495",
-     "845933807345074186"
+     "845933807345074186",
+    "1376504668645232652"
     ];
   
     antimembers.forEach(async member => {
@@ -73,6 +74,7 @@ process.on('uncaughtException', error => {
 
 
   client.login(process.env.TOKEN)
+
 
 
 
